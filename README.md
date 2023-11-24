@@ -1,6 +1,5 @@
 # AccessCity
 ## Resumo
-![Logo do projeto](https://github.com/Lua-da-tarde/AccessCity/blob/main/imagens/nome.png)
 O projeto AccessCity visa facilitar a acessibilidade de pessoas com deficiência na utilização do transporte e locais públicos, garantindo dessa forma seus direitos, em especial, o de ir e vir.   
 O projeto é separado entre web (HTML-5, CSS e Python) e aplicativo mobile (Flutter). O site é majoritariamente divulgativo e estático, porém conta com cadastro de usuário e página de acesso à conta. Ao mesmo tempo temos um aplicativo mobile com diversas funcionalidades, entre elas:
 * Mapa interativo localizado na cidade de Limeira - SP
