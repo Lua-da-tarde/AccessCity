@@ -1,0 +1,35 @@
+meta {
+  name: registro
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ baseUrl }}/mobile/registro
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "cpf": "{{ cpf }}",
+      "nome_completo": "{{ nome }}",
+      "senha": "{{ senha }}",
+      "username": "{{ username }}",
+      "email": "{{ email }}",
+      "celular": "{{ celular }}",
+      "data_nascimento": "{{ ano }}-{{ mes }}-{{ dia }}"
+  }
+}
+
+vars:pre-request {
+  email: cat@gmail.com
+  senha: cat1234
+  celular: 12 12345-1234
+  cpf: 25315785214
+  nome: Catarina Fagotti
+  username: a_cat
+  ano: 2001
+  mes: 5
+  dia: 8
+}

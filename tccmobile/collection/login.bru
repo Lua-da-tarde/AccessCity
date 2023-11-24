@@ -1,0 +1,23 @@
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ baseUrl }}/mobile/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "{{ email }}",
+    "senha": "{{ senha }}"
+  }
+}
+
+vars:pre-request {
+  email: ame@meida.com
+  senha: meieda
+}
