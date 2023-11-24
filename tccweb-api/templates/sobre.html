@@ -1,0 +1,325 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF=8">
+  <meta hhtp-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="{{ 'imagens/logo3.png' | url_for_static }}" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre nós</title>
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style class="text/css">
+    body {
+      background-color: #e6dfd2;
+    }
+    .containerHist{
+      background: none;
+    }
+    .containerHist2{
+      box-shadow: none;
+    }
+    .recheio{
+      padding-top: 10vh;
+    }
+    .desrecheio{
+      margin-top: -40px;
+    }
+    @media screen and (max-width: 1024px) {
+      #imgSB1{
+        height: 350px;
+      }
+      #imgSB2{
+        height: 250px;
+      }
+      .desrecheio{
+        margin-top: 70px;
+      }
+      .recheio{
+        padding-top: 0;
+      }
+      .cardE{
+        margin: 10px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      #imgSB1{
+        height: 350px;
+      }
+      #imgSB2{
+        height: 250px;
+      }
+      .recheio{
+        padding-top: 2vh;
+      }
+      .desrecheio{
+        margin-top: 50px;
+      }
+      .cardE{
+        margin: 10px;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      #imgSB1{
+        visibility: hidden;
+      }
+      #imgSB2{
+        visibility: hidden;
+      }
+      .desrecheio{
+        margin-top: -550px;
+      }
+      .containerSB{
+        width: 90%;
+      }
+      .cardE{
+        margin: 10px;
+      }
+      .containerHist{
+        padding-left: 20%;
+      }
+      .containerHist2{
+        padding-left: 20%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--Começo NavBar-->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(102, 155, 188);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><img src="{{ 'imagens/logo3.png' | url_for_static }}" height="40px" width="40px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/"><span lang="en-us">Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/sobre">Sobre nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contato">Contato</a>
+          </li>
+          {% if  session['cpf'] %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/perfil">Perfil</a>
+                </li>
+                </ul>
+                  <form class="d-flex ml-auto" style="margin-left: auto;" role="search" method="post" action="/sair">
+                      <button type="submit" class="btn btn-light">Sair</button>
+                  </form>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/perfil">Perfil</a>
+                </li>
+              </ul>
+                    <form class="d-flex ml-auto" role="search">
+                        <a class="btn btn-light" role="button" href="/tela">Log In</a>
+                    </form>
+                {% endif %}
+      </div>
+    </div>
+  </nav>
+  <!--Final NavBar-->
+
+  <!--Container da História-->
+  <h1 class="display-3 pt-3 text-center">Sobre nós</h1>
+
+  <!--Novo Container História-->
+  <div class="container-fluid pt-3">
+    <div class="row containerHist d-flex flex-fill justify-content-evenly">
+      <div class="col-md-5 recheio">
+        <div class="row containerSB">
+          <div class="col-md-12" style="background-color: #669bbc;border-radius: 18px 18px 0 0;">
+            <h2 class="display-4 text-center">O que é <span lang="en-us">AccessCity</span>?</h2>
+          </div>
+          <div class="col-md-12 pt-3" style="background-color: #edede9;border-radius: 0 0 20px 20px;">
+            <p class="text-center"><span lang="en-us">AccessCity</span> é um aplicativo <span lang="en-us">mobile</span>
+              que tem como objetivo tornar as cidades brasileiras mais acessíveis. A aplicação auxilia no uso de
+              transporte
+              público, utiliza filtros para avaliação de estabelecimentos baseados em sua acessibilidade (restaurantes,
+              parques,
+              escolas, etc), além de possuir um scanner e atalhos para armazenar uma cópia do passe livre e outros
+              documentos
+              importantes como laudos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 align-items-start">
+        <img src="{{ 'imagens/freepik.png' | url_for_static }}" height="500px" id="imgSB1" alt="Imagem de ilustração de pessoas com 
+        dispositivos eletrônicos com símbolos de acessibilidade">
+      </div>
+    </div>
+
+    <div class="row d-flex flex-fill justify-content-evenly desrecheio">
+      <div class="col-md-5 align-items-start">
+        <img src="{{ 'imagens/freepik2.png' | url_for_static }}" height="400px" id="imgSB2" alt="Símbolos relacionados a estudos, 
+        faculdade juntamente com a logo da unicamp">
+      </div>
+      <div class="col-md-5 recheio containerHist2">
+        <div class="row containerSB">
+          <div class="col-md-12" style="background-color: #669bbc;border-radius: 18px 18px 0 0;">
+            <h2 class="display-4 text-center">De onde isso veio?</h2>
+          </div>
+          <div class="col-md-12 pt-3" style="background-color: #edede9;border-radius: 0 0 20px 20px;">
+            <p class="text-center"><span lang="en-us">AcessCity</span> é um projeto de <span style="text-transform: uppercase;">TCC</span> do Colégio Técnico de Limeira da 
+              <span style="text-transform: uppercase;">UNICAMP</span> dentro do curso de Desenvolvimento de Sistemas que se iniciou no ano de 2022.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Fim container historia-->
+
+  <h2 class="display-3 text-center pt-5">Funcionalidades</h2>
+
+  <!--Container Funcionalidades-->
+  <div class="container-fluid d-flex pt-4">
+    <div class="row containerCelular justify-content-evenly flex-fill">
+      <div class="cardC">
+        <div class="conteudoC">
+          <h2>Ônibus</h2>
+          <p>O aplicativo mostra as opções de rotas de ônibus acessíveis baseado na sua localização atual e o local de 
+            destino</p>
+        </div>
+        <img src="{{ 'imagens/celular.png' | url_for_static }}" alt="Celular com o aplicativo aberto aparacendo várias rotas de 
+        ônibus">
+      </div>
+      <div class="cardC">
+        <div class="conteudoC">
+          <h2>Avaliação</h2>
+          <p>É possível conferir o quão acessível é algum local público e avaliá-lo com base na sua deficiência ou 
+            necessidade especial</p>
+        </div>
+        <img src="{{ 'imagens/celular.png' | url_for_static }}" alt="Celular com o aplicativo aberto, aparecendo uma 
+        avaliação de um parque com vários comentários.">
+      </div>
+    </div>
+  </div>
+  <!--Container Funcionalidades-->
+
+  <h2 class="display-3 text-center mgB-3 pt-4">Nossa Equipe</h2>
+
+  <!--Container Equipe-->
+  <div class="container-fluid d-flex mgB-4">
+    <div class="row justify-content-evenly align-items-center flex-fill">
+      <div class="cardE pt-2">
+        <div class="circle">
+          <div class="imgE">
+            <img src="{{ 'imagens/equipe/yo.jfif' | url_for_static }}" alt="Imagem de perfil de Luanna">
+          </div>
+        </div>
+        <div class="descriptionE">
+          <a href="#"><i class="bi bi-instagram ic"></i></a>
+          <a href="#"><i class="bi bi-envelope ic"></i></a>
+          <h3>Luanna Sachinelli Paggiaro</h3>
+          <h4>Project Manager</h4>
+        </div>
+      </div>
+      <div class="cardE pt-2">
+        <div class="circle">
+          <div class="imgE">
+            <img src="{{ 'imagens/equipe/nat.png' | url_for_static }}" alt="Imagem de perfil de Natália">
+          </div>
+        </div>
+        <div class="descriptionE">
+          <a href="#"><i class="bi bi-instagram ic"></i></a>
+          <a href="#"><i class="bi bi-envelope ic"></i></a>
+          <h3>Natália Carvalho</h3>
+          <h4>Programadora e <span style="text-transform: uppercase;">PCD</span></h4>
+        </div>
+      </div>
+      <div class="cardE pt-2">
+        <div class="circle">
+          <div class="imgE">
+            <img src="{{ 'imagens/equipe/cat.png' | url_for_static }}" alt="Imagem de perfil de Catarina">
+          </div>
+        </div>
+        <div class="descriptionE">
+          <a href="#"><i class="bi bi-instagram ic"></i></a>
+          <a href="#"><i class="bi bi-envelope ic"></i></a>
+          <h3>Catarina Fagotti Bonifácio</h3>
+          <h4>Programadora</h4>
+        </div>
+      </div>
+      <div class="cardE pt-2">
+        <div class="circle">
+          <div class="imgE">
+            <img src="{{ 'imagens/equipe/heitor.jpg' | url_for_static }}" alt="Imagem de perfil de Heitor">
+          </div>
+        </div>
+        <div class="descriptionE">
+          <a href="#"><i class="bi bi-instagram ic"></i></a>
+          <a href="#"><i class="bi bi-envelope ic"></i></a>
+          <h3>Heitor Gomes de Oliveira</h3>
+          <h4>Programador</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Fim Container Equipe-->
+
+  <!--Começo Novo Footer-->
+  <footer>
+    <div class="containerF">
+      <div class="sec aboutus">
+        <h2>Sobre nós</h2>
+        <p>AccessCity é um projeto de TCC de um aplicativo mobile que tem como objetivo tornar as cidades brasileiras mais acessíveis
+          para pessoas com deficiência e necessidades especiais. Ele foi desenvolvido pelo Colégio Técnico de Limeira da 
+          <span style="text-transform: uppercase;">UNICAMP</span>.</p>
+        <ul class="sci">
+          <li><a href="#"><i class="bi bi-envelope"></i></a></li>
+          <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+        </ul>
+      </div>
+      <div class="sec quicklinks">
+        <h2>Links Rápidos</h2>
+        <ul>
+          <li><a href="#">Download</a></li>
+          <li><a href="#">Log-In e Cadastro</a></li>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      <div class="sec contact">
+        <h2>Contato</h2>
+        <ul class="info">
+          <li>
+            <span><i class="bi bi-geo-alt-fill"></i></span>
+            <span>Rua Paschoal Marmo, 1888, Jardim<br>
+              Nova Itália, CEP 13484-332</span>
+          </li>
+          <!--<li>
+            <span><i class="bi bi-telephone-fill"></i></span>
+            <p><a href="tel: 123456789">(19) 99999-9999</a><br>
+              <a href="tel: 123456789">(19) 99999-9999</a>
+            </p>
+          </li>-->
+          <li>
+            <span><i class="bi bi-envelope-fill"></i></span>
+            <p><a href="mailto: google@gmail.com">accesscity@gmail.com</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <div class="copyrightText">
+    <p>Copyright © 2023 AccessCity. All Rights Reserved.</p>
+  </div>
+  <!--Fim Footer-->
+</body>
+
+<!--Javascript-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</html>
