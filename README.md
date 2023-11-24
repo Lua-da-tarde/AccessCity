@@ -14,7 +14,7 @@ O projeto é separado entre web (HTML-5, CSS e Python) e aplicativo mobile (Flut
 2. Faça o download do Android Studio - https://developer.android.com/studio/install?hl=pt-br  
 3. Faça o download do Flutter - https://docs.flutter.dev/get-started/install
 4. Faça o download do Dart
-5. Abra separadamente as pastas web-e-api e tccflutter na sua IDE de escolha  
+5. Abra separadamente as pastas tccweb-e-api e tccmobile na sua IDE de escolha  
 6. Para rodar a primeira pasta é necessário baixar Pyhton e as dependências descritas no começo do código  
 7. Após baixar as dependências rode o arquivo principal "app.py" para iniciar a API e rodar o site de forma local
 8. Para rodar a segunda pasta abra o terminal na pasta do projeto e insira "flutter pub get"
